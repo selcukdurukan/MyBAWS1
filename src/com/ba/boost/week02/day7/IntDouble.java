@@ -35,7 +35,8 @@ public class IntDouble {
 		System.out.println(numB++) ; 
 		int numA = 10;
 		System.out.println(++numA);
-				
+		
+		
 	
 	}
 
