@@ -14,7 +14,7 @@ public class ThreadProcess extends Thread{
 			}
 			System.out.println(i);
 		  ThreadProcess yourThread = new ThreadProcess();
-		  yourThread.start();;;
+		  yourThread.start();;;;
 		}
 
 		
