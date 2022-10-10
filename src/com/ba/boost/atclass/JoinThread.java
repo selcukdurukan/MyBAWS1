@@ -50,7 +50,7 @@ public class JoinThread extends Thread{
 		t13.start();
 		t14.start();
 		t15.start();
-		t16.start();
+		t16.start();;
 		
 	}
 
