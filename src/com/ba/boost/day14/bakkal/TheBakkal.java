@@ -35,8 +35,7 @@ public class TheBakkal {
 			System.out.print("Lutfen bir secim yapiniz: ");
 			int selection = this.sc.nextInt();
 			this.sc.nextLine(); // her sayi bilgisi girdikten sonra girişte hata yaşamamak için nextLine()
-								// metodunu çağır. bu problem buffe
-
+								// metodunu çağır. bu problem buffer'dan kaynaklanıyor.
 			if (selection == 4) {
 				break;
 			}
@@ -44,7 +43,6 @@ public class TheBakkal {
 				System.out.println("Yanlis secim yaptiniz. Lutfen tekrarlayiniz.");
 				continue;
 			}
-
 		}
 		this.sc.close();
 	}
@@ -75,32 +73,51 @@ public class TheBakkal {
 			System.err.println("Depoda urun yok.");
 		}
 		System.out.println("Alisveris listesi");
+		double totalPrice = 0.0;
 		do {
-			System.out.println("Almak istediginiz urunu belirtiniz (bitirmek icin TAMAM yazin): ");
+			System.out.print("Almak istediginiz urunu belirtiniz (bitirmek icin TAMAM yazin): ");
 			String itemName = this.sc.nextLine();
 			if (itemName.equalsIgnoreCase("tamam")) {
 				System.out.println("Bye...");
 				continueShopping = false;   //Do-while göstermek için böyle yazdık aslında break olurdu.
 			}else {
-				if (!itemExists(itemName)) {
+				Item item = itemExists(itemName);
+				if (item == null) {
 					System.out.println("Istediginiz urun depoda bulunamamakta. Baska nasil yardimci olabilirim? ");
 					continue;
+				}
+				System.out.print("Kac " + item.getUnit() + " " + item.getName() + " almak istiyorsunuz?");
+				double amount = this.sc.nextDouble();
+				this.sc.nextLine();
+				if (amount > item.getAmount()) {
+					System.out.println("Istediginiz miktarda " + item.getName() + "yok. En fazla " + item.getAmount()+ " " + item.getUnit() + " alabilirsiniz.");
+				} else {
+					double price = (amount * item.getUnitPrice()) * (1 + item.getVatRate() / 100);
+					System.out.println(amount +  " " + item.getUnit() + " icin toplam KDV dahil fiyat: " + price);
+					totalPrice += price;
+					item.setAmount(item.getAmount() - amount);
 				}
 			}
 			
 		} while (continueShopping);
 		
+		if (totalPrice == 0.0) {
+			System.out.println("Alisveris yapmadan ayriliyorsunuz. ");
+		}else {
+			System.out.println("Lutfen kasada " + totalPrice + " TL odeyiniz.");
+		}
+		
 	}
 
-	private boolean itemExists(String itemName) {
-		boolean retVal = false;
+	private Item itemExists(String itemName) {
+		Item retVal = null;
 		
 		for (int i = 0; i < items.length; i++) {
-			if(items[i] != null) {
+			if(items[i] == null) {
 				break;
 			}
 			if(items[i].getName().equalsIgnoreCase(itemName)) {
-				retVal = true;
+				retVal = items[i];
 				break;
 			}	
 		}
