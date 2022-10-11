@@ -32,7 +32,7 @@ public class TheBakkal {
 			System.out.println("2 - Urunleri listele");
 			System.out.println("3 - Alisveris yap");
 			System.out.println("4 - Eve don");
-			System.out.print("Lutfen bir secim yapiniz: ");
+			System.out.print("Lutfen bir secim yapiniz: ");;
 			int selection = this.sc.nextInt();
 			this.sc.nextLine(); // her sayi bilgisi girdikten sonra girişte hata yaşamamak için nextLine()
 								// metodunu çağır. bu problem buffer'dan kaynaklanıyor.
