@@ -1,6 +1,6 @@
 package com.ba.boost.day14;
 
-public class tt {
+public class Array {
 
 	public static void main(String[] args) {
 		
@@ -10,7 +10,6 @@ public class tt {
 		a[2]=70;
 		a[3]=40;
 		a[4]=50;
-		a[5]=60;
 
 		//printing array
 		for(int i=0;i<a.length;i++)//length is the property of array

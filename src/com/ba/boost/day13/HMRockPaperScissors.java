@@ -1,5 +1,6 @@
 package com.ba.boost.day13;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class HMRockPaperScissors {
@@ -12,6 +13,7 @@ public class HMRockPaperScissors {
 	public static void main(String[] args) {
 		
 		HMRockPaperScissors obj = new HMRockPaperScissors();
+		System.out.println(computerChose1());
 		obj.menu();
 		System.out.println("Bye...");	
 	}
@@ -19,7 +21,7 @@ public class HMRockPaperScissors {
 	private void menu() {
 		try {
 			this.sc = new Scanner(System.in);
-			System.out.println("HELLO!!!");
+			System.out.println("HELLO!!! Welcome to Rock, Paper, Scissors");
 			System.out.println("This game is played by computer and user. The game takes 3 round.");
 			System.out.println("Press 1 to play game.");
 			System.out.println("Press 2 to quit.");
@@ -139,5 +141,14 @@ public class HMRockPaperScissors {
 		computerChoice = computerChoice * 3 + 1;
 		return (int) computerChoice;	
 	}
-
+	
+	private static int computerChose1() {
+		Random random = new Random();
+		int rand = random.nextInt(2);
+		if (rand == 0) {
+			return computerChose1();
+		}
+		return rand;
+		
+	}
 }
