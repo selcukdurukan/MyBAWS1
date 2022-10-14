@@ -90,7 +90,7 @@ public class TheBakkal {
 				double amount = this.sc.nextDouble();
 				this.sc.nextLine();
 				if (amount > item.getAmount()) {
-					System.out.println("Istediginiz miktarda " + item.getName() + "yok. En fazla " + item.getAmount()+ " " + item.getUnit() + " alabilirsiniz.");
+					System.out.println("Istediginiz miktarda " + item.getName() + " yok. En fazla " + item.getAmount()+ " " + item.getUnit() + " alabilirsiniz.");
 				} else {
 					double price = (amount * item.getUnitPrice()) * (1 + item.getVatRate() / 100);
 					System.out.println(amount +  " " + item.getUnit() + " icin toplam KDV dahil fiyat: " + price);
@@ -116,7 +116,7 @@ public class TheBakkal {
 			if(items[i] == null) {
 				break;
 			}
-			if(items[i].getName().equalsIgnoreCase(itemName)) {
+			if(items[i].getName().equalsIgnoreCase(itemName) && items[i].getAmount() > 0.0) {
 				retVal = items[i];
 				break;
 			}	
