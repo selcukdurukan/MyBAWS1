@@ -1,4 +1,4 @@
-package com.ba.boost.atclass.libary;
+package com.ba.boost.day18.library.model;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ public class Video extends Product implements Rentable {
 
 	private Resolution resolution;
 	private String[] actors;
-	
+
 	public Video(String name, LocalDate productionDate, int availableAmount, double basePrice, Resolution resolution,
 			String[] actors) {
 		super(name, productionDate, availableAmount, basePrice);
@@ -15,6 +15,9 @@ public class Video extends Product implements Rentable {
 		this.actors = actors;
 	}
 
+	public Video(String name, LocalDate productionDate, int availableAmount, double basePrice) {
+		super(name, productionDate, availableAmount, basePrice);
+	}
 
 	public Resolution getResolution() {
 		return resolution;
@@ -22,6 +25,21 @@ public class Video extends Product implements Rentable {
 
 	public String[] getActors() {
 		return actors;
+	}
+	
+	@Override
+	public int getAvailableAmountInfo() {
+		return this.getAvailableAmount();
+	}
+
+	@Override
+	public String getNameInfo() {
+		return this.getName();
+	}
+
+	@Override
+	public void updateAmountInfo(int amount) {
+		this.setAvailableAmount(amount);
 	}
 
 	@Override
@@ -31,25 +49,5 @@ public class Video extends Product implements Rentable {
 	}
 
 
-	@Override
-	public int getAvaibleAmountInfo() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-
-	@Override
-	public String getNameInfo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public void updateAmountInfo(int amount) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 }

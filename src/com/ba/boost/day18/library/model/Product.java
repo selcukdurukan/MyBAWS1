@@ -1,16 +1,14 @@
-package com.ba.boost.atclass.libary;
+package com.ba.boost.day18.library.model;
 
 import java.time.LocalDate;
 
 public abstract class Product {
-	
+
 	private String name;
 	private LocalDate productionDate;
 	private int availableAmount;
 	private double basePrice;
-	
-	
-	
+
 	public Product(String name, LocalDate productionDate, int availableAmount, double basePrice) {
 		super();
 		this.name = name;
@@ -19,48 +17,43 @@ public abstract class Product {
 		this.basePrice = basePrice;
 	}
 
-	
+	public Product() {
+		super();
+	}
+
+
 
 	public void sellProduct(int amount, double discountRate) {
-		if (amount < availableAmount) {
-			double price = basePrice - (basePrice * discountRate);
+		if (amount < this.availableAmount) {
+			double price = this.basePrice - (this.basePrice * discountRate);
 			double endPrice = price * amount;
-			System.out.println(amount + " adet " + this.name + " adlı ürünün toplam satış fiyatı: "+ endPrice);
-			availableAmount -= amount;
+			System.out.println(amount + " adet " + this.name + " adli urunun toplam satis fiyatı: " + endPrice);
+			this.availableAmount -= amount;
 		} else {
-			System.err.println("Almak istediğiniz üründen yeteri kadar yok.");
+			System.out.println("Almak istediginiz urunden yeteri kadar yok.");
 		}
+
 	}
 
 	public int getAvailableAmount() {
 		return availableAmount;
 	}
 
-
-
 	public void setAvailableAmount(int availableAmount) {
 		this.availableAmount = availableAmount;
 	}
-
-
 
 	public double getBasePrice() {
 		return basePrice;
 	}
 
-
-
 	public void setBasePrice(double basePrice) {
 		this.basePrice = basePrice;
 	}
 
-
-
 	public String getName() {
 		return name;
 	}
-
-
 
 	public LocalDate getProductionDate() {
 		return productionDate;
@@ -73,4 +66,5 @@ public abstract class Product {
 	}
 	
 	
+
 }
