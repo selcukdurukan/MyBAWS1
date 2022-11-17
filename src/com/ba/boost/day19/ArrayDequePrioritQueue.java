@@ -18,6 +18,10 @@ public class ArrayDequePrioritQueue {
 		regs2.add(15);
 		regs2.add(14);
 		
+		
+		
+		regs2.poll();
+		
 		System.out.println(regs2);
 
 	}
