@@ -11,9 +11,9 @@ public class StudentTest {
 		Student s1 = new Student();
 		s1.setName("Hakan");
 		s1.setRollNo(1500000);
-		System.out.println(s1);  
+		System.out.println(s1);  	
 		
-		
+	
 
 	}
 
