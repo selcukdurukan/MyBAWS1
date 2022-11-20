@@ -61,11 +61,7 @@ public class StreamExp {
 		
 	System.out.println(list1.stream().anyMatch(s -> s.contains("e")));	//Or
 	System.out.println(list1.stream().allMatch(s -> s.contains("G")));	//and
-	
-	list1.stream().
 		
-		
-
 	}
 
 }
