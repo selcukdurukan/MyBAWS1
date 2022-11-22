@@ -41,7 +41,7 @@ public class HMAnimalList {
 //		
 //		System.out.println(animals.isEmpty());
 //		
-//		System.out.println(animals.indexOf("Pig"));
+		System.out.println(animals.indexOf("Pig"));
 
 //		animals.set(1, "Giraffe");
 //		System.out.println(animals);
@@ -60,8 +60,8 @@ public class HMAnimalList {
 //		Collections.reverse(animals);
 //		System.out.println(animals);
 		
-		Collections.sort(animals);
-		System.out.println(animals);
+//		Collections.sort(animals);
+//		System.out.println(animals);
 		
 //		Collections.sort(animals, Collections.reverseOrder());
 //		System.out.println(animals);
