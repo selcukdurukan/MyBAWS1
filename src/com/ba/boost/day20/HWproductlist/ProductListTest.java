@@ -72,9 +72,9 @@ public class ProductListTest {
 	private void addProduct() {
 
 		while (true) {
-			System.out.println("\tPlease write key.\n\t2-For quit.");
+			System.out.println("\tPlease write key.\n\t0-For quit.");
 			int keyInput = sc.nextInt();
-			if (keyInput == 2) {
+			if (keyInput == 0) {
 				break;
 			}
 			
