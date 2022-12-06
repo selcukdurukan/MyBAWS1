@@ -10,7 +10,7 @@ public class BufferedInputStreamExample {
 		try {
 			FileInputStream file = new FileInputStream("C:\\Users\\selcu\\Desktop\\Deneme Dosyaları Java\\newFile.txt");
 			
-			BufferedInputStream input = new BufferedInputStream(file);  //Bir de BufferOuptStream var yazmak için.
+			BufferedInputStream input = new BufferedInputStream(file);  //Bir de BufferOuputStream var yazmak için.
 			
 			int i = input.read();
 			while (i != -1) {

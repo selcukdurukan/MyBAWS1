@@ -7,6 +7,7 @@ public class JoinThread extends Thread{
 		for (int i = 0; i < 5; i++) {
 			try {
 				Thread.sleep(1000);
+				System.out.println("Current thread name: " + Thread.currentThread().getName());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -34,7 +35,7 @@ public class JoinThread extends Thread{
 		JoinThread t14 = new JoinThread();
 		JoinThread t15 = new JoinThread();
 		JoinThread t16 = new JoinThread();
-		
+		t1.setPriority(MAX_PRIORITY);
 		t1.start();
 		t2.start();
 		t3.start();

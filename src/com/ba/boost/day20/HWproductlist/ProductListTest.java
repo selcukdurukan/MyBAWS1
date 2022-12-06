@@ -100,6 +100,7 @@ public class ProductListTest {
 	}
 
 	private void lookProduct() {
+
 		for (Map.Entry<Integer, Product> i : products.entrySet()) {
 			int key = i.getKey();
 			Product value = i.getValue();
