@@ -20,9 +20,11 @@ public class ArrayDequePrioritQueue {
 		
 		
 		
-		regs2.poll();
+//		regs2.poll();
+//		regs1.poll();
 		
 		System.out.println(regs2);
+		System.out.println(regs1);
 
 	}
 

@@ -11,7 +11,11 @@ public class SingletonClass {
 	 * herhangi bir örnek oluşturmak kendi sınıfı içinde mümkün.
 	 * 
 	 */
-
+		
+	private SingletonClass() {
+		super();
+	}
+	
 	/*
 	 * Dördüncü adım: Tek bir örneğine ihtiyac duydugumuz bilgileri içeren sınıfın
 	 * değişkenleri tanımlıyoruz.
@@ -19,9 +23,7 @@ public class SingletonClass {
 	
 	private String name;
 
-	private SingletonClass() {
-		super();
-	}
+
 
 	/*
 	 * Ücüncü adım: bir public static getInstance() yöntemi sağlamak. Bu yöntem lazy
