@@ -22,32 +22,6 @@ public class GameArenaThread extends Thread {
 
 	}
 
-	private void fightWithBug() throws InterruptedException {
-		Bug bug = new Bug();
-		System.out.println();
-		System.out.println("At " + gameMeter + " Look at the bug!!! It's dangerous enemy!! There will be fight");
-		while (true) {
-			hero.setHp(hero.getHp() - bug.getAttack());
-			bug.setHp(bug.getHp() - hero.getAttack());
-			Thread.sleep(gameDuration);
-			if (hero.getHp() % 10 == 0) {
-				System.out.println("Your Hero HP: " + hero.getHp());
-				System.out.println("Bug HP: " + bug.getHp());
-				if (hero.getHp() <= 0 || bug.getHp() <= 0) {
-					break;
-				}
-			}
-		}
-		Thread.sleep(gameDuration);
-		if (hero.getHp() > 0) {
-			System.out.println("We have won. There are " + (FINISH_POINT - gameMeter) + " for finish.");
-		} else {
-			System.out.println("Hero couldn't survive :(");
-		}
-		System.out.println();
-
-	}
-
 	private void goAhead() throws InterruptedException {
 		for (gameMeter = 0; gameMeter <= FINISH_POINT; gameMeter++) {
 			if (hero.getHp() <= 0) {
@@ -85,29 +59,63 @@ public class GameArenaThread extends Thread {
 
 	}
 
-	private void fightWithZombie() throws InterruptedException {
-		Zombie zombie = new Zombie();
+	private void fightWithBug() throws InterruptedException {
+		Bug bug = new Bug();
 		System.out.println();
+		System.out.println("At " + gameMeter + " Look at the bug!!! It's dangerous enemy!! There will be fight");
+		Thread.sleep(gameDuration);
 
-		System.out.println("At " + gameMeter + " Look at the Zombie!!! It's dangerous enemy!! There will be fight");
 		while (true) {
-			hero.setHp(hero.getHp() - zombie.getAttack());
-			zombie.setHp(zombie.getHp() - hero.getAttack());
-			Thread.sleep(gameDuration);
+			hero.setHp(hero.getHp() - bug.getAttack());
+			bug.setHp(bug.getHp() - hero.getAttack());
+
 			if (hero.getHp() % 10 == 0) {
 				System.out.println("Your Hero HP: " + hero.getHp());
-				System.out.println("Zombie HP: " + zombie.getHp());
-				if (hero.getHp() <= 0 || zombie.getHp() <= 0) {
+				System.out.println("Bug HP: " + bug.getHp());
+				Thread.sleep(gameDuration);
+
+				if (hero.getHp() <= 0 || bug.getHp() <= 0) {
 					break;
 				}
 			}
 		}
-		Thread.sleep(gameDuration);
+
 		if (hero.getHp() > 0) {
 			System.out.println("We have won. There are " + (FINISH_POINT - gameMeter) + " for finish.");
 		} else {
 			System.out.println("Hero couldn't survive :(");
 		}
+		Thread.sleep(gameDuration);
+		System.out.println();
+
+	}
+
+	private void fightWithZombie() throws InterruptedException {
+		Zombie zombie = new Zombie();
+		System.out.println();
+
+		System.out.println("At " + gameMeter + " Look at the Zombie!!! It's dangerous enemy!! There will be fight");
+		Thread.sleep(gameDuration);
+
+		while (true) {
+			hero.setHp(hero.getHp() - zombie.getAttack());
+			zombie.setHp(zombie.getHp() - hero.getAttack());
+			if (hero.getHp() % 10 == 0) {
+				System.out.println("Your Hero HP: " + hero.getHp());
+				System.out.println("Zombie HP: " + zombie.getHp());
+				Thread.sleep(gameDuration);
+				if (hero.getHp() <= 0 || zombie.getHp() <= 0) {
+					break;
+				}
+			}
+		}
+
+		if (hero.getHp() > 0) {
+			System.out.println("We have won. There are " + (FINISH_POINT - gameMeter) + " for finish.");
+		} else {
+			System.out.println("Hero couldn't survive :(");
+		}
+		Thread.sleep(gameDuration);
 		System.out.println();
 
 	}
@@ -117,24 +125,27 @@ public class GameArenaThread extends Thread {
 		System.out.println();
 
 		System.out.println("At " + gameMeter + " Look at the lion!!! It's dangerous enemy!! There will be fight");
+		Thread.sleep(gameDuration);
 		while (true) {
 			hero.setHp(hero.getHp() - lion.getAttack());
 			lion.setHp(lion.getHp() - hero.getAttack());
-			Thread.sleep(gameDuration);
+
 			if (hero.getHp() % 10 == 0) {
 				System.out.println("Your Hero HP: " + hero.getHp());
 				System.out.println("Lion HP: " + lion.getHp());
+				Thread.sleep(gameDuration);
 				if (hero.getHp() <= 0 || lion.getHp() <= 0) {
 					break;
 				}
 			}
 		}
-		Thread.sleep(gameDuration);
+
 		if (hero.getHp() > 0) {
 			System.out.println("We have won. There are " + (FINISH_POINT - gameMeter) + " for finish.");
 		} else {
 			System.out.println("Hero couldn't survive :(");
 		}
+		Thread.sleep(gameDuration);
 		System.out.println();
 
 	}
