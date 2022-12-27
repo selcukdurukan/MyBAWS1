@@ -32,6 +32,11 @@ public class DBTest {
 //				System.out.println(rs.getString(1));
 //				System.out.println(rs.getString(2));
 //				System.out.println(rs.getString(3));
+				
+				rs.close();
+				stmt.close();
+				con.close();
+				
 			}
 			
 			/*
@@ -43,6 +48,7 @@ public class DBTest {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	
 	}
 
 }

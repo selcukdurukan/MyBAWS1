@@ -4,8 +4,8 @@ public class AdditionWithoutAddition {
 
 	public static void main(String[] args) {
 		
-		int a = 10;
-		int b = 15;
+		int a = 15;
+		int b = 20;
 		
 		System.out.println(AdditionWithoutAddition.add(a,b));
 
