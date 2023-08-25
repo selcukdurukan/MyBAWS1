@@ -20,6 +20,7 @@ public class ProductListTest {
 		obj.products.put(3, new Product("Rice", AmountType.PACKAGE, 5));
 		obj.products.put(4, new Product("Water", AmountType.L, 5));
 		obj.products.put(5, new Product("Chocolate", AmountType.PACKAGE, 5));
+		obj.products.put(6, new Product("Armut", AmountType.KG, 5));
 
 		obj.menu();
 		System.out.println("Bye....");
